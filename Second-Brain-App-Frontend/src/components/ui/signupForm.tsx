@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
 import axios from "axios";
-const serverUrl = import.meta.env.VITE_API_URL
+const serverUrl = import.meta.env.VITE_SERVER_URL
 const signUpSchema = z
   .object({
     username: z
