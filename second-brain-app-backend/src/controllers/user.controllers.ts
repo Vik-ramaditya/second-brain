@@ -98,10 +98,11 @@ export const signin = async (req: any, res: any) => {
     });
 
     // Set cookie for authentication
-    res.cookie("token", token, user._id, {
+    res.cookie("token", token, {
       httpOnly: true, // only accessible by the server
-      secure: true, // only sent over HTTPS
-      expires: "1d", // 24 hours
+      secure: false, // only sent over HTTPS
+      sameSite: "lax",
+      maxAge: 24*60*60*1000 // 24 hours
     });
 
     return res.status(200).json({
